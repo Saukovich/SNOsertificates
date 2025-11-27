@@ -5,7 +5,7 @@ import os
 
 from telebot.async_telebot import AsyncTeleBot
 from keyboards import get_year_selection_keyboard
-from massages import start_message
+from messages import start_message
 
 bot = AsyncTeleBot(os.environ['TEST_BOT_TOKEN'])
 
