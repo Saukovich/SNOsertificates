@@ -30,9 +30,9 @@ async def handle_year (call):
 
         :return: None
     """
-    year = call.data.replace('year_', '')
-    text = change_event_message + year +'-го года'
-    event_selection_keyboard = get_event_selection_keyboard()
+    year = int(call.data.replace('year_', ''))
+    text = change_event_message + str(year) +'-го года'
+    event_selection_keyboard = get_event_selection_keyboard(year)
     await bot.send_message(call.message.chat.id, text, reply_markup=event_selection_keyboard)
 
 # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
